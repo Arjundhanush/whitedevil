@@ -1,0 +1,58 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: whitesmoke;
+}
+
+#video,
+#capture,
+#canvas {
+    width: 90%;
+    max-width: 500px;
+    padding: 2rem;
+}
+#capture {
+    background-color: #4A90E2; /* Elegant blue */
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor:pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 90%;
+    max-width: 500px;
+    margin: 1rem auto;
+    display: block;
+}
+
+#capture:hover {
+    background-color: #357ABD; 
+    transform: translateY(-2px); 
+}
+
+#capture:active {
+    background-color: #2C5FA8;
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (min-width: 768px) {
+    .single {
+        padding: 3rem;
+    }
+}
+
+#head{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+    font-weight: 500;
+    color: rgb(35, 12, 12);
+}
