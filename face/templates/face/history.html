@@ -1,0 +1,27 @@
+{% extends "face/layout.html" %}
+{% block body %}
+<h2>Attendance History</h2>
+
+{% if records %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Date & Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+                <tr>
+                    <td>{{ record.detail.topic }}</td>
+                    <td>{{ record.detail.date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>You haven't attended any classes yet.</p>
+{% endif %}
+
+<a href="{% url 'index' %}" class="btn btn-primary">Back to Home</a>
+{% endblock %}

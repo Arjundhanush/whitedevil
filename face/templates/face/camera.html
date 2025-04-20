@@ -1,0 +1,32 @@
+{% extends "face/layout.html" %}
+{% block body %}
+
+<script src="{% static 'face/script.js' %}"></script>
+
+<div id="head"> ATTENDANCE </div>
+
+<!-- ✅ Only ONE video element -->
+<div>
+    <video id="video" class="single" width="640" height="480" autoplay></video>
+</div>
+
+<button id="capture" class="single">Capture Photo</button>
+
+<canvas id="canvas" class="single" style="display: none;"></canvas>
+
+<div class="single">
+    <h3>Captured Image:</h3>
+    <img id="captured-img" alt="Captured photo will appear here" style="width: 100%; border-radius: 8px;" />
+</div>
+
+<script>
+navigator.mediaDevices.getUserMedia({ video: true })
+  .then(stream => {
+    document.getElementById("video").srcObject = stream;
+  })
+  .catch(err => {
+    alert("Camera not accessible: " + err);
+  });
+</script>
+
+{% endblock %}
